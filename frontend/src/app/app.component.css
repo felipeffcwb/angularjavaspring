@@ -1,0 +1,80 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+  min-height: 10vh;
+}
+
+.fullRow {
+  height: 90vh;
+}
+
+  .bgImage {
+    background-image: url('../assets/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .myShadowHd{
+    -webkit-box-shadow: 0px 0px 67px -31px rgba(51,51,51,1);
+-moz-box-shadow: 0px 0px 67px -31px rgba(51,51,51,1);
+box-shadow: 0px 0px 67px -31px rgba(51,51,51,1);
+  }
+  
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes fadein {
+    /* Firefox */
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes fadein {
+    /* Safari and Chrome */
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-o-keyframes fadein {
+    /* Opera */
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .svg-lg {
+      display: none !important;
+    }
+
+    #myTitle {
+      display:none !important;
+    }
+}
+
+@media screen and (max-width: 426) {
+  .bgImage{
+    height: 20vh;
+  }
+  
+  #contentRouter{
+    height: 80vh;
+  }
+}

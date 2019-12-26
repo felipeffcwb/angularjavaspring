@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.btn-success{
+    height: 60px;
+}
+
+@media (max-width: 425px) 
+{
+  #Header {
+      display: none !important;
+  }
+}

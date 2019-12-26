@@ -1,0 +1,49 @@
+<div class="container myFade">
+    <div class="row" style="height:50px;">
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-12 d-flex flex-column">
+        <div *ngFor="let item of error; let i = index" class="col-12">
+          <div
+            class="alert alert-primary alert-dismissible fade show col-12"
+            role="alert"
+            *ngIf="error.length"
+          >
+          <p>{{error[i]}}</p>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        </div>
+    </div>
+    <div *ngIf="statusRequest; else elseBlock" class="overflow-auto myShadow">
+      <table class="table table-hover border">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Fone</th>
+          <th scope="col">Job</th>
+          <th scope="col">Actions</th>
+        </tr>
+        <tbody>
+          <tr *ngFor="let item of registers; let i = index">
+            <td>{{registers[i].name}}</td>
+            <td>{{registers[i].email}}</td>
+            <td >{{registers[i].phone | mask: '(00) 00000-0000'}}</td>
+            <td>{{registers[i].job}}</td>
+            <td>
+              <!-- <button class="btn btn-danger mr-2 mt-1 mb-1" @click="deleteRegister(item.registerId)" v-if="item.registerId != 1">Delete</button> -->
+              <button class="btn btn-link mr-2 mt-1 mb-1" type="button" (click)="deleteRegister(registers[i].id)" *ngIf="registers[i].id != 27">Delete</button>
+              <!-- <a href="http://devfelipe.com" target="_blank" v-else>devfelipe.com</a> -->
+              <!-- <a href="http://devfelipe.com" target="_blank">devfelipe.com</a> -->
+              <!-- <button class="btn btn-primary mt-1 mb-1" @click="getToUpdate(item.registerId)" v-if="item.registerId != 1">Edit</button> -->
+              <button class="btn btn-link  mt-1 mb-1" type="button" (click)="sendIdByUrl(registers[i].id)" *ngIf="registers[i].id != 27">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #elseBlock>
+      <img src="../../../assets/103.gif" />
+    </ng-template>
+  </div>
